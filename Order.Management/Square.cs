@@ -6,7 +6,7 @@ namespace Order.Management
 {
     class Square : Shape
     {
-
+        // 1. Inconsistent lines. Doesn't matter if we decide line after class declaration or not, but it should be consistent.
         public int SquarePrice = 1;
 
         public Square(int numberOfRedSquares, int numberOfBlueSquares, int numberOfYellowSquares)
@@ -23,7 +23,7 @@ namespace Order.Management
         {
             return RedSquaresTotal() + BlueSquaresTotal() + YellowSquaresTotal();
         }
-
+        // 2. Missing spaces between methods. 
         public int RedSquaresTotal()
         {
             return (base.NumberOfRedShape * Price);

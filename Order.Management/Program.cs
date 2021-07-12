@@ -5,6 +5,8 @@ namespace Order.Management
 {
     class Program
     {
+        // 3. Class is doing a lot, it most likely violates single responsiblity principle. 
+
         // Main entry
         static void Main(string[] args)
         {
@@ -18,10 +20,13 @@ namespace Order.Management
 
             PaintingReport(customerName, address, dueDate, orderedShapes);
         }
-        
+
+        // 2. All of these Order<Shape>Input methods have a lot of repepeition in them  
+
         // Order Circle Input
         public static Circle OrderCirclesInput()
         {
+            // 1. Applications crashes if you input number. SApplication should handle this exceptions. 
             Console.Write("\nPlease input the number of Red Circle: ");
             int redCircle = Convert.ToInt32(userInput());
             Console.Write("Please input the number of Blue Circle: ");

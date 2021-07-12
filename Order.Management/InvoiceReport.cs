@@ -37,6 +37,7 @@ namespace Order.Management
                    base.OrderedBlocks[2].NumberOfRedShape;
         }
 
+        // 2. Remove this methods and replace with a call to the AdditionalChargeTotal method.
         public int TotalPriceRedPaintSurcharge()
         {
             return TotalAmountOfRedShapes() * base.OrderedBlocks[0].AdditionalCharge;
@@ -46,11 +47,14 @@ namespace Order.Management
             PrintLine();
             PrintRow("        ", "   Red   ", "  Blue  ", " Yellow ");
             PrintLine();
+            // Foreach loop
             PrintRow("Square", base.OrderedBlocks[0].NumberOfRedShape.ToString(), base.OrderedBlocks[0].NumberOfBlueShape.ToString(), base.OrderedBlocks[0].NumberOfYellowShape.ToString());
             PrintRow("Triangle", base.OrderedBlocks[1].NumberOfRedShape.ToString(), base.OrderedBlocks[1].NumberOfBlueShape.ToString(), base.OrderedBlocks[1].NumberOfYellowShape.ToString());
             PrintRow("Circle", base.OrderedBlocks[2].NumberOfRedShape.ToString(), base.OrderedBlocks[2].NumberOfBlueShape.ToString(), base.OrderedBlocks[2].NumberOfYellowShape.ToString());
             PrintLine();
         }
+
+        // 1. Besides the \n in squares, all these methods are identical. 
         public void OrderSquareDetails()
         {
             Console.WriteLine("\nSquares 		  " + base.OrderedBlocks[0].TotalQuantityOfShape() + " @ $" + base.OrderedBlocks[0].Price + " ppi = $" + base.OrderedBlocks[0].Total());
